@@ -46,7 +46,7 @@ namespace Fawkes.BLL
         {
             return File
                 .ReadLines(file)
-                .Any(line => line.ToLower().Contains(_searchedText));
+                .Any(line => line.IndexOf(_searchedText, StringComparison.OrdinalIgnoreCase) >= 0);
         }
     }
 }
